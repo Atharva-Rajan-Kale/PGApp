@@ -1,8 +1,9 @@
 import HomePage from "./routes/homePage/homePage";
-import ListPage from "./routes/listPage/listPage";
-import SinglePage from "./routes/singlePage/singlePage";
-import Layout from "./routes/layout/layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ListPage from "./routes/listPage/listPage";
+import Layout from "./routes/layout/layout";
+import SinglePage from "./routes/singlePage/singlePage";
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -24,6 +25,7 @@ function App() {
       ],
     },
   ]);
+
   return <RouterProvider router={router} />;
 }
 

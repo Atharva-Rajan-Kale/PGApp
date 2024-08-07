@@ -12,6 +12,9 @@ function SearchBar() {
   const navigate = useNavigate();
   const switchType = (val) => {
     setQuery((prev) => ({ ...prev, type: val }));
+    // if (val === "rent") {
+    //   navigate("/list-form");
+    // }
     if (val === "list") {
       navigate("/list-form");
     }
