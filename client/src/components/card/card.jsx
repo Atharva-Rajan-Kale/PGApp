@@ -5,9 +5,8 @@ function Card({ item }) {
   return (
     <div className="card">
       <Link to={`/${item.id}`} className="imageContainer">
-        <img src={item.img} alt="" />
+        <img src={item.images[0]} alt="" />
       </Link>
-
       <div className="textContainer">
         <h2 className="title">
           <Link to={`/${item.id}`}>{item.title}</Link>
@@ -16,7 +15,7 @@ function Card({ item }) {
           <img src="/pin.png" alt="" />
           <span>{item.address}</span>
         </p>
-        <p className="price">{item.price}</p>
+        <p className="price">$ {item.price}</p>
         <div className="bottom">
           <div className="features">
             <div className="feature">

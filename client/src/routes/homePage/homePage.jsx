@@ -1,20 +1,22 @@
+import { useContext } from "react";
 import SearchBar from "../../components/searchBar/SearchBar";
 import "./homePage.scss";
+import { AuthContext } from "../../context/AuthContext";
 
 function HomePage() {
+
+  const {currentUser} = useContext(AuthContext)
+
   return (
     <div className="homePage">
       <div className="textContainer">
         <div className="wrapper">
-          <h1 className="title">
-            Find your ideal PG accommodation and make it your home.
-          </h1>
+          <h1 className="title">Find Real Estate & Get Your Dream Place</h1>
           <p>
-            Our platform connects you with a range of high-quality PG options
-            tailored to your needs and preferences. Explore verified listings,
-            compare amenities, and secure your perfect living space with just a
-            few clicks. Experience convenience and comfort like never
-            before—your dream PG is waiting!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+            explicabo suscipit cum eius, iure est nulla animi consequatur
+            facilis id pariatur fugit quos laudantium temporibus dolor ea
+            repellat provident impedit!
           </p>
           <SearchBar />
           <div className="boxes">
@@ -24,7 +26,7 @@ function HomePage() {
             </div>
             <div className="box">
               <h1>200</h1>
-              <h2>Awards Gained</h2>
+              <h2>Award Gained</h2>
             </div>
             <div className="box">
               <h1>2000+</h1>
@@ -39,4 +41,5 @@ function HomePage() {
     </div>
   );
 }
+
 export default HomePage;
