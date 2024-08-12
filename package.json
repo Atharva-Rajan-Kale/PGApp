@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "@prisma/client": "^5.18.0",
-    "bcrpyt": "^2.0.0",
-    "cookie-parser": "^1.4.6",
-    "jsonwebtoken": "^9.0.2",
-    "prisma": "^5.18.0"
-  }
-}
