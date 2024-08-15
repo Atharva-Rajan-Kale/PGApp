@@ -10,13 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "axios": "^1.6.7",
     "dompurify": "^3.1.6",
-=======
     "axios": "^1.7.4",
-    "dompurify": "^3.0.9",
->>>>>>> d6f021728be747998e7dba907d96d323df0d6b9d
     "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
