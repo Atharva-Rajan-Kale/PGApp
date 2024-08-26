@@ -4,39 +4,39 @@ import "./homePage.scss";
 import { AuthContext } from "../../context/AuthContext";
 
 function HomePage() {
-
-  const {currentUser} = useContext(AuthContext)
+  const { currentUser } = useContext(AuthContext);
 
   return (
     <div className="homePage">
       <div className="textContainer">
         <div className="wrapper">
-          <h1 className="title">Find Real Estate & Get Your Dream Place</h1>
+          <h1 className="title">
+            Find Your Perfect PG & Enjoy Comfortable Living
+          </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-            explicabo suscipit cum eius, iure est nulla animi consequatur
-            facilis id pariatur fugit quos laudantium temporibus dolor ea
-            repellat provident impedit!
+            Discover a wide range of paying guest accommodations that suit your
+            lifestyle. Whether you're a student or a professional, we provide
+            the ideal spaces to make you feel at home.
           </p>
           <SearchBar />
           <div className="boxes">
             <div className="box">
-              <h1>16+</h1>
-              <h2>Years of Experience</h2>
+              <h1>10+</h1>
+              <h2>Years of Service</h2>
             </div>
             <div className="box">
-              <h1>200</h1>
-              <h2>Award Gained</h2>
+              <h1>500</h1>
+              <h2>Happy Guests</h2>
             </div>
             <div className="box">
-              <h1>2000+</h1>
-              <h2>Property Ready</h2>
+              <h1>1000+</h1>
+              <h2>PG Listings</h2>
             </div>
           </div>
         </div>
       </div>
       <div className="imgContainer">
-        <img src="/bg.png" alt="" />
+        <img src="/bg.png" alt="PG Background" />
       </div>
     </div>
   );

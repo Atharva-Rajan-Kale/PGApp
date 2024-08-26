@@ -8,8 +8,7 @@ function Login() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const {updateUser} = useContext(AuthContext)
-
+  const { updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -27,8 +26,7 @@ function Login() {
         password,
       });
 
-      updateUser(res.data)
-
+      updateUser(res.data);
       navigate("/");
     } catch (err) {
       setError(err.response.data.message);
@@ -36,11 +34,12 @@ function Login() {
       setIsLoading(false);
     }
   };
+
   return (
     <div className="login">
       <div className="formContainer">
-        <form onSubmit={handleSubmit}>
-          <h1>Welcome back</h1>
+        <form onSubmit={handleSubmit} className="loginForm">
+          <h1>Welcome Back</h1>
           <input
             name="username"
             required
@@ -48,20 +47,29 @@ function Login() {
             maxLength={20}
             type="text"
             placeholder="Username"
+            className="loginInput"
           />
           <input
             name="password"
             type="password"
             required
             placeholder="Password"
+            className="loginInput"
           />
-          <button disabled={isLoading}>Login</button>
-          {error && <span>{error}</span>}
-          <Link to="/register">{"Don't"} you have an account?</Link>
+          <button
+            disabled={isLoading}
+            className={`loginButton ${isLoading ? "loading" : ""}`}
+          >
+            {isLoading ? "Logging in..." : "Login"}
+          </button>
+          {error && <span className="errorMessage">{error}</span>}
+          <Link to="/register" className="registerLink">
+            Don't have an account? Sign up
+          </Link>
         </form>
       </div>
       <div className="imgContainer">
-        <img src="/bg.png" alt="" />
+        <img src="/bg.png" alt="Login Background" />
       </div>
     </div>
   );

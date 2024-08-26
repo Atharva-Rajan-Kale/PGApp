@@ -6,13 +6,13 @@ import DOMPurify from "dompurify";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import apiRequest from "../../lib/apiRequest";
-
+import Chat from "../../components/chat/Chat";
 function SinglePage() {
   const post = useLoaderData();
   const [saved, setSaved] = useState(post.isSaved);
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
-
+  const [chatVisible, setChatVisible] = useState(false);
   const handleSave = async () => {
     if (!currentUser) {
       navigate("/login");
@@ -26,7 +26,9 @@ function SinglePage() {
       setSaved((prev) => !prev);
     }
   };
-
+  const handleSendMessage = () => {
+    setChatVisible(true); // Set chat visibility to true when "Send a Message" is clicked
+  };
   return (
     <div className="singlePage">
       <div className="details">
@@ -139,7 +141,7 @@ function SinglePage() {
             <Map items={[post]} />
           </div>
           <div className="buttons">
-            <button>
+            <button onClick={handleSendMessage}>
               <img src="/chat.png" alt="" />
               Send a Message
             </button>
@@ -155,6 +157,9 @@ function SinglePage() {
           </div>
         </div>
       </div>
+      {chatVisible && (
+        <Chat chats={[{ id: post.user.id, receiver: post.user }]} />
+      )}
     </div>
   );
 }

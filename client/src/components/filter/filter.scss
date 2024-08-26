@@ -1,54 +1,97 @@
 .filter {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+  background-color: #f4f4f4;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 
   h1 {
-    font-weight: 300;
-    font-size: 24px;
+    font-weight: 600;
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 20px;
   }
 
   .item {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 8px;
 
     label {
-      font-size: 10px;
+      font-size: 14px;
+      color: #666;
+      font-weight: 600;
     }
 
     input,
     select {
-      width: 100px;
-      padding: 10px;
-      border: 1px solid #e0e0e0;
-      border-radius: 5px;
-      font-size: 14px;
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #bbb;
+      border-radius: 10px;
+      font-size: 18px;
+      color: #333;
+      background-color: #fff;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: #fece51;
+        outline: none;
+      }
     }
   }
 
   .top {
     input {
       width: 100%;
+      box-sizing: border-box;
     }
   }
 
   .bottom {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
 
+    @media (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .item {
+      flex: 1;
+      min-width: 180px;
+
+      @media (min-width: 768px) {
+        flex-basis: calc(33.333% - 20px);
+      }
+    }
+
     button {
-      width: 100px;
-      padding: 10px;
+      align-self: flex-start;
+      padding: 14px 24px;
       border: none;
+      border-radius: 10px;
       cursor: pointer;
       background-color: #fece51;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #e6b949;
+      }
 
       img {
-        width: 24px;
-        height: 24px;
+        margin-left: 10px;
+        width: 22px;
+        height: 22px;
       }
     }
   }

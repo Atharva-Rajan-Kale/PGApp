@@ -3,88 +3,120 @@
 .profilePage {
   display: flex;
   height: 100%;
+  background-color: #f7f9fc;
+  overflow: hidden;
 
-  @include md{
+  @include md {
     flex-direction: column;
-    overflow: scroll;
+    overflow-y: auto;
   }
 
   .details {
     flex: 3;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-bottom: 50px;
+    background-color: white;
+    border-right: 1px solid #e0e0e0;
 
-    @include md{
-      flex:none;
+    @include md {
+      flex: none;
       height: max-content;
     }
 
-    .wrapper{
-      padding-right: 50px;
+    .wrapper {
+      padding: 20px 50px;
       display: flex;
       flex-direction: column;
-      gap: 50px;
+      gap: 30px;
 
-      .title{
+      .title {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        h1{
-          font-weight: 300;
+        h1 {
+          font-weight: 500;
+          color: #333;
         }
 
-        button{
-          padding: 12px 24px;
+        button {
+          padding: 10px 20px;
           background-color: #fece51;
           cursor: pointer;
           border: none;
+          border-radius: 5px;
+          font-weight: bold;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: #f0b945;
+          }
         }
       }
 
-      .info{
+      .info {
         display: flex;
         flex-direction: column;
         gap: 20px;
 
-        span{
+        .avatarSection {
           display: flex;
           align-items: center;
           gap: 20px;
+
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #ddd;
+          }
         }
 
-        button{
-          width: 100px;
-          background-color: teal;
+        span {
+          font-size: 16px;
+          color: #555;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .logoutBtn {
+          width: max-content;
+          background-color: #ff6b6b;
           border: none;
           color: white;
           padding: 10px 20px;
           cursor: pointer;
           border-radius: 5px;
-        }
+          font-weight: bold;
+          transition: background-color 0.3s;
 
-        img{
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          object-fit: cover;
+          &:hover {
+            background-color: #ff4c4c;
+          }
         }
       }
     }
   }
+
   .chatContainer {
     flex: 2;
     background-color: #fcf5f3;
     height: 100%;
+    overflow-y: auto;
 
-    @include md{
-      flex:none;
+    @include md {
+      flex: none;
       height: max-content;
     }
 
-    .wrapper{
-      padding: 0px 20px;
+    .wrapper {
+      padding: 20px;
       height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
   }
 }

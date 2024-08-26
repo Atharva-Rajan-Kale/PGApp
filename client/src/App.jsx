@@ -8,7 +8,14 @@ import Login from "./routes/login/login";
 import Register from "./routes/register/register";
 import ProfileUpdatePage from "./routes/profileUpdatePage/profileUpdatePage";
 import NewPostPage from "./routes/newPostPage/newPostPage";
-import { listPageLoader, profilePageLoader, singlePageLoader } from "./lib/loaders";
+import {
+  listPageLoader,
+  profilePageLoader,
+  singlePageLoader,
+} from "./lib/loaders";
+import About from "./routes/about/about";
+import Contact from "./routes/contact/contact";
+import Agent from "./routes/agent/agent";
 
 function App() {
   const router = createBrowserRouter([
@@ -19,6 +26,18 @@ function App() {
         {
           path: "/",
           element: <HomePage />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+        {
+          path: "/agent",
+          element: <Agent />,
         },
         {
           path: "/list",
@@ -48,7 +67,7 @@ function App() {
         {
           path: "/profile",
           element: <ProfilePage />,
-          loader: profilePageLoader
+          loader: profilePageLoader,
         },
         {
           path: "/profile/update",

@@ -7,11 +7,9 @@ function Map({ items }) {
   return (
     <MapContainer
       center={
-        items.length === 1
-          ? [items[0].latitude, items[0].longitude]
-          : [52.4797, -1.90269]
+        items.length === 1 ? [items[0].latitude, items[0].longitude] : [20, 0] // Adjusted to a global view (approximate center of the world map)
       }
-      zoom={7}
+      zoom={items.length === 1 ? 10 : 2} // Start zoomed out for a global view, closer if only one item
       scrollWheelZoom={false}
       className="map"
     >

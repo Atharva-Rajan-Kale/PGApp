@@ -1,93 +1,104 @@
 @import "../../responsive.scss";
 
 .searchBar {
-  .type {
+  width: 100%;
+  margin-bottom: 20px;
 
+  .type {
+    display: flex;
 
     button {
+      flex: 1;
       padding: 16px 36px;
-      border: 1px solid #999;
+      border: 1px solid #ccc;
       border-bottom: none;
       cursor: pointer;
       background-color: white;
+      color: #333;
       text-transform: capitalize;
+      font-size: 16px;
+      transition: background-color 0.3s, color 0.3s;
 
       &.active {
-        background-color: black;
-        color: white;
+        background-color: #333;
+        color: #fff;
       }
 
       &:first-child {
         border-top-left-radius: 5px;
-        border-right: none;
       }
+
       &:last-child {
         border-top-right-radius: 5px;
-        border-left: none;
+      }
+
+      &:hover {
+        background-color: #f0f0f0;
       }
     }
   }
 
   form {
-    border: 1px solid #999;
+    border: 1px solid #ccc;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     height: 64px;
-    gap: 5px;
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
 
     @include sm {
       flex-direction: column;
-      border: none;
+      height: auto;
+      border-radius: 5px;
+      padding: 10px;
     }
 
     input {
       border: none;
-      padding: 0px 10px;
+      padding: 10px 15px;
       width: 200px;
+      font-size: 16px;
+      outline: none;
+      border-right: 1px solid #ccc;
 
       @include lg {
-        padding: 0px 5px;
-
-        &:nth-child(2),
-        &:nth-child(3) {
-          width: 140px;
-        }
+        width: 150px;
       }
+
       @include md {
         width: 200px;
-        &:nth-child(2),
-        &:nth-child(3) {
-          width: 200px;
-        }
       }
 
-      @include sm{
-        width: auto;
-        &:nth-child(2),
-        &:nth-child(3) {
-          width: auto;
+      @include sm {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        &:last-child {
+          border-bottom: none;
         }
-        padding: 20px;
-        border: 1px solid #999;
       }
     }
 
-    a{
-      flex: 1;
-      background-color: #fece51;
+    a {
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: #fece51;
+      padding: 0 20px;
+      height: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #fdb843;
+      }
 
       button {
         border: none;
+        background: none;
         cursor: pointer;
-        background-color: #fece51;
-        
-        @include sm{
-          padding: 10px;
-        }
-        
+
         img {
           width: 24px;
           height: 24px;

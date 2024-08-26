@@ -1,33 +1,63 @@
+@import "../../responsive.scss";
+
 .registerPage {
-  height: 100%;
   display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f9fc;
 
   .formContainer {
     flex: 3;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    form {
+    .form {
       display: flex;
       flex-direction: column;
       gap: 20px;
+      width: 100%;
+      max-width: 400px;
+      padding: 40px;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+
+      h1 {
+        font-size: 28px;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+      }
 
       input {
-        padding: 20px;
-        border: 1px solid gray;
+        padding: 15px;
+        border: 1px solid #ddd;
         border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.2s;
+
+        &:focus {
+          border-color: #0066cc;
+        }
       }
 
       button {
-        padding: 20px;
+        padding: 15px;
         border-radius: 5px;
         border: none;
-        background-color: teal;
+        background-color: #0066cc;
         color: white;
+        font-size: 16px;
         font-weight: bold;
         cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover:not(:disabled) {
+          background-color: #005bb5;
+        }
 
         &:disabled {
           background-color: #bed9d8;
@@ -35,27 +65,34 @@
         }
       }
 
-      span {
-        color: rgba(255, 0, 0, 0.591);
+      .error {
+        color: #e74c3c;
+        font-size: 14px;
+        text-align: center;
       }
 
-      a {
+      .loginLink {
         font-size: 14px;
-        color: gray;
-        border-bottom: 1px solid gray;
-        width: max-content;
+        color: #0066cc;
+        text-align: center;
+        margin-top: 10px;
+        text-decoration: underline;
       }
     }
   }
 
   .imgContainer {
     flex: 2;
-    background-color: #fcf5f3;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #f7f9fc;
+
     img {
-      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
   }
 }

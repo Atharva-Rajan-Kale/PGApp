@@ -2,58 +2,66 @@
 
 .homePage {
   display: flex;
+
   height: 100%;
+
+  background-color: #f7f8fa;
+
+  @include lg {
+    flex-direction: row;
+  }
 
   .textContainer {
     flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 
     .wrapper {
-      padding-right: 100px;
+      max-width: 600px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      gap: 50px;
-      height: 100%;
+      gap: 20px;
+      text-align: center;
 
-      @include lg{
+      @include lg {
+        text-align: left;
         padding-right: 50px;
       }
 
-      @include md{
-        padding: 0;
-      }
-
-      @include sm{
-        justify-content: flex-start;
-      }
-
       .title {
-        font-size: 64px;
+        font-size: 48px;
+        color: #2c3e50;
 
         @include lg {
-          font-size: 48px;
+          font-size: 40px;
         }
       }
 
       .boxes {
         display: flex;
         justify-content: space-between;
+        margin-top: 20px;
 
         @include sm {
-          display: none;
+          flex-direction: column;
+          gap: 10px;
         }
 
         h1 {
-          font-size: 36px;
+          font-size: 32px;
+          color: #fece51;
 
           @include lg {
-            font-size: 32px;
+            font-size: 28px;
           }
         }
 
         h2 {
-          font-size: 20px;
+          font-size: 18px;
           font-weight: 300;
+          color: #7f8c8d;
         }
       }
     }
@@ -61,22 +69,23 @@
 
   .imgContainer {
     flex: 2;
-    background-color: #fcf5f3;
-    position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
+    background-color: #fcf5f3;
+    padding: 20px;
 
     @include md {
       display: none;
     }
 
     img {
-      width: 115%;
-      position: absolute;
-      right: 0;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
 
       @include lg {
-        width: 105%;
+        width: 90%;
       }
     }
   }

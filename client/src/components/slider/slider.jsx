@@ -6,17 +6,9 @@ function Slider({ images }) {
 
   const changeSlide = (direction) => {
     if (direction === "left") {
-      if (imageIndex === 0) {
-        setImageIndex(images.length - 1);
-      } else {
-        setImageIndex(imageIndex - 1);
-      }
+      setImageIndex(imageIndex === 0 ? images.length - 1 : imageIndex - 1);
     } else {
-      if (imageIndex === images.length - 1) {
-        setImageIndex(0);
-      } else {
-        setImageIndex(imageIndex + 1);
-      }
+      setImageIndex(imageIndex === images.length - 1 ? 0 : imageIndex + 1);
     }
   };
 
@@ -24,28 +16,32 @@ function Slider({ images }) {
     <div className="slider">
       {imageIndex !== null && (
         <div className="fullSlider">
-          <div className="arrow" onClick={() => changeSlide("left")}>
-            <img src="/arrow.png" alt="" />
+          <div className="arrow left" onClick={() => changeSlide("left")}>
+            <img src="/arrow.png" alt="Previous" />
           </div>
           <div className="imgContainer">
-            <img src={images[imageIndex]} alt="" />
+            <img src={images[imageIndex]} alt={`Slide ${imageIndex + 1}`} />
           </div>
-          <div className="arrow" onClick={() => changeSlide("right")}>
-            <img src="/arrow.png" className="right" alt="" />
+          <div className="arrow right" onClick={() => changeSlide("right")}>
+            <img src="/arrow.png" alt="Next" />
           </div>
           <div className="close" onClick={() => setImageIndex(null)}>
-            X
+            &times;
           </div>
         </div>
       )}
-      <div className="bigImage">
-        <img src={images[0]} alt="" onClick={() => setImageIndex(0)} />
+      <div className="mainImage">
+        <img
+          src={images[0]}
+          alt="Main slide"
+          onClick={() => setImageIndex(0)}
+        />
       </div>
-      <div className="smallImages">
+      <div className="thumbnails">
         {images.slice(1).map((image, index) => (
           <img
             src={image}
-            alt=""
+            alt={`Thumbnail ${index + 2}`}
             key={index}
             onClick={() => setImageIndex(index + 1)}
           />
